@@ -1,0 +1,25 @@
+Aplikacja ma pomóc dbać o rośliny domowe.
+
+Modele:
+* Category
+    * name - str(100)
+    
+* Room
+    * name - str (100)
+    * exposure - str choice (10) [dark, shade, part sun, full sun]
+    * temperature - str choice (10) [cold, medium, warm]
+    * humidity - str (10) [low, medium, high]
+    * draft - bool
+
+* Plant
+    * name (100)
+    * category - FK ~Category (NOT NULL)
+    * room - FK ~Room (NULL)
+    * watering_interval - int (>=0)
+    * fertilizing_interval - int (>=0)
+    * required_exposure - str (10) [~Room.exposure]
+    * required_humidity - str (10) [~Room.humidity]
+    * blooming - bool
+    * difficulty - int [1, 2, 3, 4, 5]
+    * last_watered - date (NULL)
+    * last_fertilized - date (NULL)
