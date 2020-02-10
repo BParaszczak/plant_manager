@@ -102,13 +102,13 @@ class Plant(models.Model):
     watering_interval = models.PositiveIntegerField(
         blank=False, null=False,
         verbose_name="Watering interval",
-        help_text="In days",
+        help_text="In seconds",
     )
 
     fertilizing_interval = models.PositiveIntegerField(
         blank=False, null=False,
         verbose_name="Fertilizing interval",
-        help_text="In days",
+        help_text="In seconds",
     )
     
     EXPOSURE_CHOICES = Room.EXPOSURE_CHOICES
@@ -156,18 +156,18 @@ class Plant(models.Model):
         help_text="",
     )
 
-    last_watered = models.DateField(
+    last_watered = models.DateTimeField(
         default=None, blank=True, null=True,
-        verbose_name="Last watering date",
+        verbose_name="Last watering timestamp",
         help_text="",
     )
 
-    last_fertilized = models.DateField(
+    last_fertilized = models.DateTimeField(
         default=None, blank=True, null=True,
-        verbose_name="Last fertilizing date",
+        verbose_name="Last fertilizing timestamp",
         help_text="",
     )
-    
+
     def __str__(self):
         return self.name
 
