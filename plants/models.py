@@ -1,5 +1,7 @@
 from django.db import models
 
+
+
 # Kategoria rośliny
 
 class Category(models.Model):
@@ -8,6 +10,14 @@ class Category(models.Model):
         blank=False, null=False, default="",
         unique=True,
         verbose_name="Name",
+        help_text="",
+    )
+
+    slug = models.SlugField(
+        max_length=100,
+        blank=False, null=False, default="",
+        unique=True,
+        verbose_name="Name slug",
         help_text="",
     )
 
@@ -119,12 +129,11 @@ class Plant(models.Model):
         help_text="",
     )
 
-
     TEMPERATURE_CHOICES = Room.TEMPERATURE_CHOICES
     required_temperature = models.CharField(
         max_length=10, choices=TEMPERATURE_CHOICES,
         blank=False, null=False,
-        verbose_name="Sun exposure",
+        verbose_name="Temperature",
         help_text="",
     )
 
@@ -132,7 +141,7 @@ class Plant(models.Model):
     required_humidity = models.CharField(
         max_length=10, choices=HUMIDITY_CHOICES,
         blank=False, null=False,
-        verbose_name="Sun exposure",
+        verbose_name="Humidity",
         help_text="",
     )
     
