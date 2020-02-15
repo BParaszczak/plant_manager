@@ -21,6 +21,10 @@ class Category(models.Model):
         help_text="",
     )
 
+    class Meta:
+        verbose_name="Category"
+        verbose_name_plural="Categories"
+
     def __str__(self):
         return self.name
 

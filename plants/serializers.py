@@ -11,6 +11,12 @@ class CategorySerializer(serializers.ModelSerializer):
             'name',
             'slug',
         ]
+        lookup_field = 'slug'
+        extra_kwargs = {
+            'url': {
+                'lookup_field': 'slug',
+            }
+        }
 
 class RoomSerializer(serializers.ModelSerializer):
     class Meta:

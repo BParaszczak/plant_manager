@@ -9,6 +9,7 @@ from .serializers import CategorySerializer, RoomSerializer, PlantSerializer
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    lookup_field = 'slug'
 
 class RoomViewSet(viewsets.ModelViewSet):
     queryset = Room.objects.all()
