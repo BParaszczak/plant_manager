@@ -15,7 +15,7 @@ class Category(models.Model):
 
     slug = models.SlugField(
         max_length=100,
-        blank=False, null=False, default="",
+        blank=False, null=False,
         unique=True,
         verbose_name="Name slug",
         help_text="",
