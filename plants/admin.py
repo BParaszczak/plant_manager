@@ -29,20 +29,6 @@ class PlantAdmin(admin.ModelAdmin):
     search_fields = ['name']
     list_select_related = True
 
-class PlantInline(admin.TabularInline):
-    model = Plant
-    extra = 1
-
-# class RoomInline(admin.TabularInline):
-#     model = Room
-#     extra = 1
-
-class CatgeoryAdmin(admin.ModelAdmin):
-    inlines = [PlantInline, ]
-
-class RoomAdmin(admin.ModelAdmin):
-    inlines = [PlantInline, ]
-
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Room, RoomAdmin)
 admin.site.register(Plant, PlantAdmin)
